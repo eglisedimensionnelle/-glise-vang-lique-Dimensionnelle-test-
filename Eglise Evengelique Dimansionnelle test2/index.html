@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Église Évangélique Dimensionnelle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Écran d'introduction -->
+    <div id="introScreen" class="intro-screen">
+        <div class="intro-content">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Logo Église Évangélique Dimensionnelle" class="intro-logo">
+                <div class="glow-effect"></div>
+            </div>
+            <div class="intro-message" id="introMessage">
+                Église Évangélique Dimensionnelle — c'est une autre dimension
+            </div>
+            <div class="intro-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <button class="skip-intro" id="skipIntro">Passer l'intro</button>
+        </div>
+    </div>
+
+    <!-- Site principal (caché au début) -->
+    <div id="mainSite" class="main-site" style="display: none;">
+        <!-- Barre de navigation -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="site-logo">
+                    <img src="assets/logo.png" alt="Logo">
+                    <span>Église Dimensionnelle</span>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="search-container">
+                    <input type="text" placeholder="Rechercher..." id="searchInput">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <button class="nav-icon" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-icon" id="userMenu">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Barre latérale -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-link active" data-page="home">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </a>
+                    <a href="#" class="nav-link" data-page="about">
+                        <i class="fas fa-info-circle"></i>
+                        <span>À propos</span>
+                    </a>
+                    <a href="#" class="nav-link" data-page="services">
+                        <i class="fas fa-church"></i>
+                        <span>Cultes & Services</span>
+                    </a>
+                    <a href="#" class="nav-link" data-page="media">
+                        <i class="fas fa-video"></i>
+                        <span>Médiathèque</span>
+                    </a>
+                    <a href="#" class="nav-link" data-page="gallery">
+                        <i class="fas fa-images"></i>
+                        <span>Galerie</span>
+                    </a>
+                    <a href="#" class="nav-link" data-page="documents">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documents</span>
+                    </a>
+                    
+                    <div class="sidebar-divider"></div>
+                    
+                    <div class="sidebar-footer">
+                        <p>© 2023 Église Évangélique Dimensionnelle</p>
+                        <p>"C'est une autre dimension"</p>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main class="main-content" id="mainContent">
+            <!-- Page d'accueil -->
+            <section id="homePage" class="page active">
+                <div class="page-header">
+                    <h1>Église Évangélique Dimensionnelle</h1>
+                    <p class="page-subtitle">Une expérience spirituelle au-delà des dimensions</p>
+                </div>
+                
+                <!-- Verset du jour -->
+                <div class="daily-verse-card">
+                    <div class="verse-header">
+                        <i class="fas fa-bible"></i>
+                        <h3>Verset du Jour</h3>
+                        <button class="refresh-verse" id="refreshVerseBtn">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                    <div class="verse-content">
+                        <p id="verseText">"Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu'il ait la vie éternelle."</p>
+                        <p class="verse-reference" id="verseRef">Jean 3:16</p>
+                    </div>
+                </div>
+                
+                <!-- Vidéos récentes -->
+                <div class="section-title">
+                    <h2><i class="fas fa-play-circle"></i> Vidéos Récentes</h2>
+                </div>
+                
+                <div class="videos-grid" id="videosGrid">
+                    <!-- Les vidéos seront générées par JavaScript -->
+                </div>
+                
+                <!-- Prochains événements -->
+                <div class="section-title">
+                    <h2><i class="fas fa-calendar-alt"></i> Prochains Événements</h2>
+                </div>
+                
+                <div class="events-container">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">15</span>
+                            <span class="event-month">JUIN</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Retraite Spirituelle</h3>
+                            <p><i class="far fa-clock"></i> 09:00 - 17:00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Centre de retraite</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">18</span>
+                            <span class="event-month">JUIN</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Culte de Jeunesse</h3>
+                            <p><i class="far fa-clock"></i> 18:00 - 20:00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Salle principale</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">22</span>
+                            <span class="event-month">JUIN</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Concert de Gospel</h3>
+                            <p><i class="far fa-clock"></i> 19:30 - 21:30</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Auditorium</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Page À propos -->
+            <section id="aboutPage" class="page">
+                <div class="page-header">
+                    <h1>À Propos de Notre Église</h1>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Notre Vision</h3>
+                        <p>Être une église dimensionnelle qui transcende les limites traditionnelles pour apporter une transformation spirituelle profonde dans la vie des croyants et influencer positivement notre communauté.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Notre Mission</h3>
+                        <p>Proclamer l'Évangile de Jésus-Christ dans toute sa dimension, former des disciples engagés, et créer une communauté d'amour, de foi et d'espérance qui rayonne la présence divine.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Nos Valeurs</h3>
+                        <ul>
+                            <li>La centralité de Jésus-Christ dans toutes choses</li>
+                            <li>L'autorité de la Parole de Dieu</li>
+                            <li>La prière comme fondement de notre vie</li>
+                            <li>L'amour fraternel et l'unité dans la diversité</li>
+                            <li>L'excellence dans le service à Dieu</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-card full-width">
+                        <h3>Notre Histoire</h3>
+                        <p>Fondée en 2010, l'Église Évangélique Dimensionnelle a commencé avec un petit groupe de croyants passionnés par une expérience spirituelle authentique. Au fil des années, nous avons grandi en nombre mais surtout en profondeur spirituelle, développant une approche unique du culte et de la formation chrétienne.</p>
+                        <p>Aujourd'hui, nous sommes une communauté vibrante qui cherche à vivre la dimension complète de la vie en Christ, au-delà des limitations traditionnelles.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Page Cultes & Services -->
+            <section id="servicesPage" class="page">
+                <div class="page-header">
+                    <h1>Cultes & Services</h1>
+                    <p class="page-subtitle">Rejoignez-nous pour nos temps de culte et de communion</p>
+                </div>
+                
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <i class="fas fa-sun"></i>
+                            <h3>Culte du Dimanche</h3>
+                        </div>
+                        <div class="service-details">
+                            <p><strong>Horaires :</strong> 10h00 - 12h30</p>
+                            <p><strong>Lieu :</strong> Sanctuaire principal</p>
+                            <p><strong>Description :</strong> Notre culte principal avec louange, adoration et prédication.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <i class="fas fa-moon"></i>
+                            <h3>Culte de Mi-Semaine</h3>
+                        </div>
+                        <div class="service-details">
+                            <p><strong>Horaires :</strong> Mercredi, 19h00 - 20h30</p>
+                            <p><strong>Lieu :</strong> Salle de culte</p>
+                            <p><strong>Description :</strong> Temps d'enseignement et de prière en milieu de semaine.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <i class="fas fa-users"></i>
+                            <h3>École du Dimanche</h3>
+                        </div>
+                        <div class="service-details">
+                            <p><strong>Horaires :</strong> Dimanche, 10h00 - 12h00</p>
+                            <p><strong>Lieu :</strong> Salles des classes</p>
+                            <p><strong>Description :</strong> Enseignement biblique adapté pour tous les âges.</p>
+                            <div class="age-groups">
+                                <span>3-6 ans</span>
+                                <span>7-12 ans</span>
+                                <span>13-17 ans</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <i class="fas fa-hands-praying"></i>
+                            <h3>Groupe de Prière</h3>
+                        </div>
+                        <div class="service-details">
+                            <p><strong>Horaires :</strong> Vendredi, 18h00 - 19h00</p>
+                            <p><strong>Lieu :</strong> Salle de prière</p>
+                            <p><strong>Description :</strong> Temps de prière communautaire pour les besoins de l'église et du monde.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <i class="fas fa-music"></i>
+                            <h3>Répétition de Louange</h3>
+                        </div>
+                        <div class="service-details">
+                            <p><strong>Horaires :</strong> Samedi, 15h00 - 17h00</p>
+                            <p><strong>Lieu :</strong> Auditorium</p>
+                            <p><strong>Description :</strong> Répétition pour l'équipe de louange et les chorales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <i class="fas fa-book-bible"></i>
+                            <h3>Étude Biblique</h3>
+                        </div>
+                        <div class="service-details">
+                            <p><strong>Horaires :</strong> Jeudi, 19h00 - 20h30</p>
+                            <p><strong>Lieu :</strong> Bibliothèque</p>
+                            <p><strong>Description :</strong> Étude approfondie de la Parole de Dieu en petits groupes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="additional-info">
+                    <h3>Informations supplémentaires</h3>
+                    <p>Pour plus d'informations sur nos services ou pour des besoins spécifiques, contactez-nous par téléphone au <strong>01 23 45 67 89</strong> ou par email à <strong>contact@eglise-dimensionnelle.fr</strong></p>
+                </div>
+            </section>
+            
+            <!-- Page Médiathèque -->
+            <section id="mediaPage" class="page">
+                <div class="page-header">
+                    <h1>Médiathèque</h1>
+                    <p class="page-subtitle">Regardez nos sermons, enseignements et moments de louange</p>
+                </div>
+                
+                <div class="media-controls">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Toutes les vidéos</button>
+                        <button class="filter-btn" data-filter="sermon">Sermons</button>
+                        <button class="filter-btn" data-filter="worship">Louanges</button>
+                        <button class="filter-btn" data-filter="teaching">Enseignements</button>
+                        <button class="filter-btn" data-filter="event">Événements</button>
+                    </div>
+                    
+                    <div class="sort-options">
+                        <select id="sortSelect">
+                            <option value="recent">Plus récent</option>
+                            <option value="oldest">Plus ancien</option>
+                            <option value="popular">Plus populaire</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="media-grid" id="mediaGrid">
+                    <!-- Les vidéos seront chargées par JavaScript -->
+                </div>
+                
+                <div class="video-player-modal" id="videoModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 id="videoTitle">Titre de la vidéo</h3>
+                            <button class="close-modal" id="closeModal">&times;</button>
+                        </div>
+                        <div class="video-container">
+                            <video id="mainVideoPlayer" controls>
+                                Votre navigateur ne supporte pas la lecture de vidéos.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-stats">
+                                <span><i class="far fa-eye"></i> <span id="videoViews">0</span> vues</span>
+                                <span><i class="far fa-calendar"></i> <span id="videoDate">Date inconnue</span></span>
+                            </div>
+                            <div class="video-description" id="videoDescription">
+                                Description de la vidéo...
+                            </div>
+                            <div class="video-actions">
+                                <button class="video-action-btn" id="likeBtn">
+                                    <i class="far fa-thumbs-up"></i> J'aime
+                                </button>
+                                <button class="video-action-btn" id="shareBtn">
+                                    <i class="fas fa-share"></i> Partager
+                                </button>
+                                <button class="video-action-btn" id="downloadBtn">
+                                    <i class="fas fa-download"></i> Télécharger
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Page Galerie -->
+            <section id="galleryPage" class="page">
+                <div class="page-header">
+                    <h1>Galerie d'Images</h1>
+                    <p class="page-subtitle">Moments de vie, événements et activités de notre église</p>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-filter active" data-filter="all">Toutes les photos</button>
+                    <button class="gallery-filter" data-filter="events">Événements</button>
+                    <button class="gallery-filter" data-filter="worship">Culte</button>
+                    <button class="gallery-filter" data-filter="community">Communauté</button>
+                    <button class="gallery-filter" data-filter="outreach">Actions</button>
+                </div>
+                
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Les images seront chargées par JavaScript -->
+                </div>
+                
+                <div class="image-modal" id="imageModal">
+                    <div class="modal-content">
+                        <button class="close-modal" id="closeImageModal">&times;</button>
+                        <div class="modal-image-container">
+                            <img id="modalImage" src="" alt="Image agrandie">
+                        </div>
+                        <div class="image-info">
+                            <h3 id="imageTitle">Titre de l'image</h3>
+                            <p id="imageDescription">Description de l'image</p>
+                            <p class="image-date" id="imageDate">Date inconnue</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Page Documents -->
+            <section id="documentsPage" class="page">
+                <div class="page-header">
+                    <h1>Documents et Ressources</h1>
+                    <p class="page-subtitle>Téléchargez nos ressources spirituelles et documents d'information</p>
+                </div>
+                
+                <div class="documents-container">
+                    <div class="documents-categories">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <h3>Programmes des Cultes</h3>
+                            <p>Programmes hebdomadaires et mensuels de nos cultes</p>
+                            <div class="documents-list" id="programsList">
+                                <!-- Documents de programmes -->
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3>Études Bibliques</h3>
+                            <p>Ressources pour l'étude personnelle ou en groupe</p>
+                            <div class="documents-list" id="studiesList">
+                                <!-- Documents d'études -->
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3>Bulletins et Newsletters</h3>
+                            <p>Informations et nouvelles de l'église</p>
+                            <div class="documents-list" id="newslettersList">
+                                <!-- Bulletins -->
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <h3>Informations Pratiques</h3>
+                            <p>Documents d'information et formulaires</p>
+                            <div class="documents-list" id="infoList">
+                                <!-- Documents d'information -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Lecteur vidéo minimal (en bas) -->
+        <div class="mini-player" id="miniPlayer" style="display: none;">
+            <div class="mini-player-content">
+                <div class="mini-video-info">
+                    <div class="mini-thumbnail">
+                        <img id="miniThumbnail" src="" alt="Miniature">
+                    </div>
+                    <div class="mini-details">
+                        <h4 id="miniTitle">Titre de la vidéo</h4>
+                        <p id="miniAuthor">Église Dimensionnelle</p>
+                    </div>
+                </div>
+                <div class="mini-controls">
+                    <button class="mini-control-btn" id="miniPlayBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="mini-control-btn" id="miniPauseBtn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="mini-control-btn" id="miniCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="mini-progress">
+                    <div class="mini-progress-bar" id="miniProgressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
